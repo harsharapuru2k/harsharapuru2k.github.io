@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsha Rapuru | Portfolio</title>
+    <meta name="description" content="Portfolio of Harsha Rapuru - Data Scientist & Software Engineer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#475569', // Slate-600
+                        dark: '#0f172a', // Slate-900
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tight text-slate-900">
+                    HR.
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-primary transition">About</a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary transition">Experience</a>
+                    <a href="#projects" class="text-slate-600 hover:text-primary transition">Projects</a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary transition">Skills</a>
+                    <a href="#contact" class="text-slate-600 hover:text-primary transition">Contact</a>
+                </div>
+                <!-- Mobile Menu Button (Simple implementation) -->
+                <div class="md:hidden">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <a href="#about" class="block px-4 py-2 text-slate-600 hover:bg-slate-50">About</a>
+            <a href="#experience" class="block px-4 py-2 text-slate-600 hover:bg-slate-50">Experience</a>
+            <a href="#projects" class="block px-4 py-2 text-slate-600 hover:bg-slate-50">Projects</a>
+            <a href="#skills" class="block px-4 py-2 text-slate-600 hover:bg-slate-50">Skills</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                
+                <!-- PHOTO AREA: Replace src below with your actual photo file name (e.g., 'me.jpg') -->
+                <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                    <img src="https://placehold.co/400x400/e2e8f0/475569?text=Harsha" 
+                         alt="Harsha Rapuru" 
+                         class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4">
+                        Harsha Rapuru
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-primary font-medium mb-6">
+                        Data Scientist & Software Engineer
+                    </h2>
+                    <p class="text-slate-600 text-lg max-w-2xl leading-relaxed mb-8">
+                        Master's student at Texas A&M University specializing in Data Science. 
+                        Experienced in building scalable full-stack applications and AI/ML pipelines. 
+                        Formerly at Salesforce, optimizing infrastructure and automating workflows.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="mailto:harsharapuru2k@gmail.com" class="px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                        <a href="https://github.com/harsharapur" target="_blank" class="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:border-slate-300 hover:bg-slate-50 transition flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/harsharapuru2k" target="_blank" class="px-6 py-3 bg-white text-blue-700 border border-slate-200 rounded-lg hover:border-blue-100 hover:bg-blue-50 transition flex items-center gap-2">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+                <i class="fas fa-briefcase text-primary"></i> Experience
+            </h2>
+
+            <div class="space-y-12 relative border-l-2 border-slate-200 ml-3 md:ml-6 pl-8 md:pl-12">
+                
+                <!-- Job 1 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Graduate Student Research Assistant</h3>
+                        <span class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
+                            Jan 2025 - Present
+                        </span>
+                    </div>
+                    <div class="text-primary font-semibold mb-4">Institute for Disaster Resilient Texas (IDRT) • College Station, TX</div>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
+                        <li>Designed and developed full-stack computer vision pipeline using Python (PyTorch, TensorFlow) and JavaScript for object detection/segmentation.</li>
+                        <li>Improved First Floor Height (FFH) accuracy by 35% by transforming ambiguous requirements into production-ready solutions.</li>
+                        <li>Engineered scalable backend services to process 10,000+ disaster images, reducing computation time by 60% via parallel processing.</li>
+                        <li>Built RESTful APIs and optimized PostgreSQL queries for real-time geolocation services with comprehensive unit testing (pytest).</li>
+                    </ul>
+                    <!-- Space for more content -->
+                    <div class="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-100 hidden">
+                        <p class="text-sm text-slate-500 italic">Add more details, screenshots, or specific achievements here...</p>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-1 h-5 w-5 rounded-full border-4 border-white bg-slate-300"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Software Engineer</h3>
+                        <span class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
+                            Nov 2023 - Jul 2024
+                        </span>
+                    </div>
+                    <div class="text-primary font-semibold mb-4">Salesforce • Hyderabad, India</div>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
+                        <li>Shipped full-stack internal apps using Python (Django), React.js, and Node.js, reducing manual monitoring effort by 50%.</li>
+                        <li>Implemented backend microservices following MVC/Repository patterns with comprehensive error handling.</li>
+                        <li>Built Chrome extensions to automate engineering workflows, boosting team productivity by 40%.</li>
+                        <li>Deployed scalable cloud solutions on AWS (EC2, S3, Lambda) using Docker/Kubernetes and IaC.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-1 h-5 w-5 rounded-full border-4 border-white bg-slate-300"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Associate Software Engineer</h3>
+                        <span class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
+                            Dec 2021 - Nov 2023
+                        </span>
+                    </div>
+                    <div class="text-primary font-semibold mb-4">Salesforce • Hyderabad, India</div>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
+                        <li>Engineered production-grade monitoring platforms for global infrastructure.</li>
+                        <li>Created Splunk dashboards for real-time insights on latency and error rates.</li>
+                        <li>Developed Slack bot integrations using Python and REST APIs, reducing MTTR by 30%.</li>
+                    </ul>
+                </div>
+                
+                 <!-- Job 4 -->
+                 <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-1 h-5 w-5 rounded-full border-4 border-white bg-slate-300"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Software Engineer Intern</h3>
+                        <span class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
+                            Dec 2020 - Nov 2021
+                        </span>
+                    </div>
+                    <div class="text-primary font-semibold mb-4">Rejolt EdTech • Hyderabad, India</div>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
+                        <li>Developed full-stack web apps using Flask, HTML/CSS, JS; improved page load times by 40%.</li>
+                        <li>Integrated MySQL databases and RESTful APIs increasing student engagement by 25%.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+                <i class="fas fa-code text-primary"></i> Projects
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-8 border border-slate-100 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-slate-900">AI-Powered Mental Health Client Portal</h3>
+                        <span class="text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded uppercase tracking-wide">Aug 2024</span>
+                    </div>
+                    <p class="text-slate-600 mb-6 flex-grow">
+                        Designed and delivered a secure full-stack application. Implemented backend services with JWT auth and query optimization (50% faster response). Integrated BERT/LSTM models for sentiment analysis.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wider text-xs">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">React.js</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Django REST</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">AWS EC2</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">PyTorch (BERT)</span>
+                        </div>
+                    </div>
+                    <!-- Extra content space -->
+                    <div class="pt-4 border-t border-slate-100">
+                         <a href="#" class="text-primary font-medium hover:underline text-sm flex items-center gap-1">
+                            View Details <i class="fas fa-arrow-right text-xs"></i>
+                         </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-8 border border-slate-100 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-slate-900">Estimating m-Height of Analog Codes</h3>
+                        <span class="text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded uppercase tracking-wide">Mar 2025</span>
+                    </div>
+                    <p class="text-slate-600 mb-6 flex-grow">
+                        Engineered a deep learning solution using PyTorch to solve complex optimization problems, replacing LP-based methods. Achieved 92% accuracy through hyperparameter tuning and custom loss functions.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wider text-xs">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">PyTorch</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">NumPy</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Pandas</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Linear Algebra</span>
+                        </div>
+                    </div>
+                     <!-- Extra content space -->
+                     <div class="pt-4 border-t border-slate-100">
+                        <a href="#" class="text-primary font-medium hover:underline text-sm flex items-center gap-1">
+                           View Details <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+                <i class="fas fa-tools text-primary"></i> Technical Skills
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Languages & Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Python (Django, Flask)</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Node.js / Express</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">GoLang</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">RESTful APIs</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Microservices</span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Frontend & Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">React.js</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Next.js</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">MongoDB</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Cassandra</span>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">AI, Tools & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">PyTorch / TensorFlow</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">AWS (EC2, S3, Lambda)</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Docker / Kubernetes</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">CI/CD (Jenkins)</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition cursor-default">Git/GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+                <i class="fas fa-graduation-cap text-primary"></i> Education
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white rounded-lg border border-slate-100 shadow-sm">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Texas A&M University</h3>
+                        <p class="text-slate-600">Master of Science in Data Science</p>
+                        <p class="text-slate-500 text-sm mt-1">College Station, Texas • GPA: 3.7/4.0</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">Aug 2024 - Present</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white rounded-lg border border-slate-100 shadow-sm">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Vardhaman College of Engineering</h3>
+                        <p class="text-slate-600">Bachelor of Technology in Computer Science</p>
+                        <p class="text-slate-500 text-sm mt-1">Hyderabad, India • GPA: 9.0/10.0</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-sm font-bold">Aug 2017 - May 2021</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Let's Connect</h2>
+            <p class="mb-8 max-w-xl mx-auto text-slate-400">
+                I'm always open to discussing new projects, creative opportunities, or partneships in AI and Full Stack Engineering.
+            </p>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="mailto:harsharapuru2k@gmail.com" class="hover:text-white transition text-3xl"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/harsharapuru2k" class="hover:text-white transition text-3xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/harsharapur" class="hover:text-white transition text-3xl"><i class="fab fa-github"></i></a>
+                <a href="tel:+19792047205" class="hover:text-white transition text-3xl"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="text-sm text-slate-500">
+                &copy; 2025 Harsha Rapuru. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
