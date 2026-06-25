@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsha Rapuru — AI Engineer & SWE</title>
+  <meta name="description" content="Harsha Rapuru — AI Engineer and Software Engineer. Ex-Salesforce. MS Data Science at Texas A&M.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f0eeea;
+      --gap: 10px;
+      --r: 16px;
+      --c-white: #ffffff;
+      --c-dark: #0f0f23;
+      --c-navy: #0f172a;
+      --c-indigo: #6366f1;
+      --c-green-light: #f0fdf4;
+      --c-amber-light: #fffbeb;
+      --c-amber-border: #fde68a;
+      --c-text: #111111;
+      --c-muted: #6b7280;
+      --c-border: rgba(0,0,0,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--c-text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(240, 238, 234, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 0.5px solid rgba(0,0,0,0.08);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--c-text);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 4px; }
+
+    .nav-link {
+      font-size: 13px;
+      color: var(--c-muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: rgba(0,0,0,0.06); color: var(--c-text); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--c-text);
+      color: #fff;
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 20px;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: #333; }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 14px 72px;
+    }
+
+    section + section { margin-top: var(--gap); }
+
+    .section-label {
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding-left: 2px;
+    }
+
+    /* ── BENTO GRID ── */
+    .bento { display: grid; gap: var(--gap); }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+
+    .c2 { grid-column: span 2; }
+    .r2 { grid-row: span 2; }
+
+    /* ── CARD BASE ── */
+    .card {
+      border-radius: var(--r);
+      padding: 22px;
+      background: var(--c-white);
+      border: 0.5px solid var(--c-border);
+    }
+
+    /* ── HERO ── */
+    .card-hero {
+      background: var(--c-dark);
+      border-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 238px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      color: #5a5a80;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-name {
+      font-size: 42px;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.04;
+      letter-spacing: -1.8px;
+      margin-bottom: 14px;
+    }
+
+    .hero-bio {
+      font-size: 12px;
+      color: #7070a0;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .hero-links { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .hero-link {
+      font-size: 11px;
+      background: rgba(255,255,255,0.07);
+      color: #a0a0cc;
+      padding: 5px 13px;
+      border-radius: 20px;
+      border: 0.5px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .hero-link:hover { background: rgba(255,255,255,0.13); color: #d0d0f0; }
+
+    /* ── STAT CARDS ── */
+    .card-indigo {
+      background: var(--c-indigo);
+      border-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-green {
+      background: var(--c-green-light);
+      border: 0.5px solid #bbf7d0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-label { font-size: 10px; letter-spacing: 0.5px; margin-bottom: 4px; }
+
+    .stat-val {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .stat-sub { font-size: 18px; font-weight: 400; letter-spacing: 0; }
+
+    /* ── PULSE DOT ── */
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      margin-right: 5px;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* ── PILLS ── */
+    .pills { display: flex; gap: 5px; flex-wrap: wrap; }
+
+    .pill { font-size: 11px; padding: 3px 9px; border-radius: 5px; white-space: nowrap; }
+    .p-purple { background: #ede9fe; color: #5b21b6; }
+    .p-blue   { background: #dbeafe; color: #1e40af; }
+    .p-green  { background: #d1fae5; color: #065f46; }
+    .p-amber  { background: #fef3c7; color: #92400e; }
+    .p-pink   { background: #fce7f3; color: #9d174d; }
+    .p-gray   { background: #f3f4f6; color: #374151; }
+    .p-teal   { background: #ccfbf1; color: #0f766e; }
+
+    /* ── PROJECT CARDS ── */
+    .card-navy { background: var(--c-navy); border-color: transparent; }
+
+    .card-amber {
+      background: var(--c-amber-light);
+      border: 0.5px solid var(--c-amber-border);
+    }
+
+    .proj-tag {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .proj-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; line-height: 1.3; }
+
+    .proj-desc { font-size: 12px; line-height: 1.72; margin-bottom: 16px; }
+
+    .proj-footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stags { display: flex; gap: 5px; flex-wrap: wrap; }
+
+    .stag { font-size: 10px; padding: 2px 8px; border-radius: 4px; }
+    .stag-n { background: #1e2a45; color: #93c5fd; }
+    .stag-a { background: #fef3c7; color: #92400e; border: 0.5px solid #fde68a; }
+
+    .proj-link { font-size: 11px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+
+    /* ── EXPERIENCE ── */
+    .exp-co   { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+    .exp-role { font-size: 12px; font-weight: 500; color: var(--c-indigo); margin-bottom: 2px; }
+    .exp-date { font-size: 11px; color: #aaa; margin-bottom: 14px; }
+
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .bullets li {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.65;
+      padding-left: 16px;
+      position: relative;
+    }
+    .bullets li::before { content: '–'; position: absolute; left: 0; color: #ccc; top: 1px; font-size: 11px; }
+
+    /* ── CONTACT ── */
+    .card-contact {
+      background: var(--c-dark);
+      border-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 160px;
+    }
+
+    .link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--c-text);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 0.5px solid #f3f3f3;
+      transition: color 0.12s;
+    }
+    .link-row:last-child { border-bottom: none; }
+    .link-row:hover { color: var(--c-indigo); }
+    .link-arr { color: var(--c-indigo); }
+
+    .edu-divider { height: 0.5px; background: #f0f0f0; margin: 16px 0; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 28px 16px; font-size: 12px; color: #bbb; }
+    footer a { color: #bbb; text-decoration: none; }
+    footer a:hover { color: #888; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 880px) {
+      .g4 { grid-template-columns: repeat(2, 1fr); }
+      .g3 { grid-template-columns: repeat(2, 1fr); }
+      .hero-name { font-size: 32px; }
+      .stat-val { font-size: 32px; }
+    }
+
+    @media (max-width: 540px) {
+      nav { padding: 0 16px; }
+      .wrap { padding: 10px 10px 48px; }
+      .g4, .g3 { grid-template-columns: 1fr; }
+      .c2 { grid-column: span 1; }
+      .r2 { grid-row: span 1; }
+      .card { padding: 18px; }
+      .nav-link { display: none; }
+      .hero-name { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Harsha Rapuru</a>
+  <div class="nav-right">
+    <a class="nav-link" href="#projects">Projects</a>
+    <a class="nav-link" href="#experience">Experience</a>
+    <a class="nav-cta" href="#contact">Hire me</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ── HERO ── -->
+  <section>
+    <div class="bento g4">
+
+      <!-- Hero 2×2 -->
+      <div class="card card-hero c2 r2">
+        <div>
+          <p class="hero-eyebrow">AI Engineer · MS Data Science · Texas A&M '26</p>
+          <h1 class="hero-name">Harsha<br>Rapuru</h1>
+          <p class="hero-bio">Ex-Salesforce SWE. Building distributed AI systems and multimodal pipelines at scale. Seeking SWE & MLE roles for Summer 2026.</p>
+        </div>
+        <div class="hero-links">
+          <a class="hero-link" href="https://github.com/harsharapuru2k" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="hero-link" href="https://linkedin.com/in/harsharapuru2k" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="hero-link" href="mailto:harsharapuru2k@gmail.com">Email ↗</a>
+          <a class="hero-link" href="tel:+19792047205">+1 (979) 204-7205</a>
+        </div>
+      </div>
+
+      <!-- Industry XP -->
+      <div class="card card-indigo">
+        <p class="stat-label" style="color:#c7d2fe;">Industry XP</p>
+        <div>
+          <p class="stat-val" style="color:#fff;">2.5<span class="stat-sub" style="color:#a5b4fc;">yr</span></p>
+          <p style="font-size:11px;color:#a5b4fc;margin-top:5px;">Salesforce + Research</p>
+        </div>
+      </div>
+
+      <!-- Open to work -->
+      <div class="card card-green">
+        <div style="display:flex;align-items:center;margin-bottom:6px;">
+          <span class="dot"></span>
+          <span style="font-size:10px;color:#15803d;font-weight:500;">Open to work</span>
+        </div>
+        <div>
+          <p style="font-size:14px;font-weight:500;color:#14532d;">Research Asst.</p>
+          <p style="font-size:11px;color:#166534;margin-top:2px;">TAMU IDRT Lab</p>
+          <p style="font-size:10px;color:#86efac;margin-top:7px;">Available Summer '26</p>
+        </div>
+      </div>
+
+      <!-- Tech stack -->
+      <div class="card">
+        <p style="font-size:10px;color:#aaa;letter-spacing:1px;margin-bottom:10px;">STACK</p>
+        <div class="pills">
+          <span class="pill p-purple">Python</span>
+          <span class="pill p-blue">Java</span>
+          <span class="pill p-green">React</span>
+          <span class="pill p-amber">AWS</span>
+          <span class="pill p-pink">PyTorch</span>
+          <span class="pill p-gray">TypeScript</span>
+          <span class="pill p-purple">Spring Boot</span>
+          <span class="pill p-teal">Kubernetes</span>
+          <span class="pill p-blue">Django</span>
+          <span class="pill p-amber">Kafka</span>
+          <span class="pill p-green">Apache Flink</span>
+          <span class="pill p-gray">Docker</span>
+        </div>
+      </div>
+
+      <!-- Projects count -->
+      <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <p class="stat-label" style="color:#aaa;">AI / ML Projects</p>
+        <div>
+          <p class="stat-val" style="color:#111;">6<span class="stat-sub" style="color:#ccc;">+</span></p>
+          <p style="font-size:10px;color:#bbb;margin-top:5px;">shipped to production</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <p class="section-label">Projects</p>
+    <div class="bento g4">
+
+      <!-- Resolve — featured 2×2 -->
+      <div class="card card-navy c2 r2">
+        <div>
+          <p class="proj-tag" style="color:#818cf8;">Multi-Agent AI · Apr – May 2026</p>
+          <h2 class="proj-title" style="color:#f8fafc;font-size:20px;">Resolve — Autonomous AI Support System</h2>
+          <p class="proj-desc" style="color:#94a3b8;">Fully automated AI-as-a-service pipeline using multi-agent architectures to independently resolve billing and bug tickets in under 2 minutes. Connected Stripe, GitHub, and Slack to process refunds, check bug statuses, and alert teams in real time. Intelligent model routing slashed AI processing costs by 60%. A PostgreSQL pgvector memory layer continuously learns from past tickets to improve resolution accuracy over time.</p>
+          <div class="stags" style="margin-bottom:18px;">
+            <span class="stag stag-n">TypeScript</span>
+            <span class="stag stag-n">Node.js</span>
+            <span class="stag stag-n">AWS Bedrock</span>
+            <span class="stag stag-n">Step Functions</span>
+            <span class="stag stag-n">Lambda</span>
+            <span class="stag stag-n">PostgreSQL + pgvector</span>
+            <span class="stag stag-n">Terraform · React</span>
+          </div>
+        </div>
+        <a class="proj-link" style="color:#818cf8;" href="https://github.com/harsharapuru2k/resolve" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+
+      <!-- Damage Claim — wide -->
+      <div class="card card-amber c2">
+        <p class="proj-tag" style="color:#b45309;">Multimodal LLM · Hackathon · Jun 2026</p>
+        <h2 class="proj-title" style="color:#78350f;">Multi-Modal Damage Claim Verification</h2>
+        <p class="proj-desc" style="color:#92400e;margin-bottom:12px;">AI solution verifying insurance claims by analyzing text and photo evidence with multimodal LLMs. Enforces safety rules ensuring visual proof overrides user history — 95%+ accuracy. Tamper and adversarial image detection routes suspicious claims to human reviewers.</p>
+        <div class="proj-footer">
+          <div class="stags">
+            <span class="stag stag-a">Python</span>
+            <span class="stag stag-a">AWS Bedrock</span>
+            <span class="stag stag-a">Claude LLMs</span>
+            <span class="stag stag-a">Multi-Agent</span>
+          </div>
+          <a class="proj-link" style="color:#92400e;" href="https://github.com/harsharapuru2k/damage-claim-verification" target="_blank" rel="noopener">HackerRank Orchestrate ↗</a>
+        </div>
+      </div>
+
+      <!-- Clinic Portal -->
+      <div class="card">
+        <p class="proj-tag" style="color:#6366f1;">Full-Stack + NLP · Aug – Oct 2025</p>
+        <h2 class="proj-title" style="font-size:14px;">Clinic Portal — AI Mental Health</h2>
+        <p class="proj-desc" style="color:#555;margin-bottom:12px;">BERT NLP pipeline for real-time sentiment analysis flagging high-risk patient data. Google Gemini integration for personalization. ML inference under 200ms on AWS EC2.</p>
+        <div class="pills">
+          <span class="pill p-purple">Django REST</span>
+          <span class="pill p-blue">React</span>
+          <span class="pill p-pink">BERT</span>
+          <span class="pill p-amber">Gemini</span>
+          <span class="pill p-green">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Ad Tech -->
+      <div class="card">
+        <p class="proj-tag" style="color:#059669;">Real-Time Streaming</p>
+        <h2 class="proj-title" style="font-size:14px;">Ad Tech Streaming Pipeline</h2>
+        <p class="proj-desc" style="color:#555;margin-bottom:12px;">30-second stateful window joins using Apache Flink and Amazon Kinesis. Attribution latency under one second. Exactly-once semantics with auto-scaling on Amazon Managed Flink.</p>
+        <div class="pills">
+          <span class="pill p-blue">Java</span>
+          <span class="pill p-gray">Apache Flink</span>
+          <span class="pill p-amber">Kinesis</span>
+          <span class="pill p-green">AWS</span>
+        </div>
+      </div>
+
+      <!-- Crypto Lakehouse -->
+      <div class="card">
+        <p class="proj-tag" style="color:#7c3aed;">Data Lakehouse</p>
+        <h2 class="proj-title" style="font-size:14px;">Crypto Data Lakehouse</h2>
+        <p class="proj-desc" style="color:#555;margin-bottom:12px;">AWS S3 lakehouse using Apache Hudi and Spark. Merge-on-Read upserts deliver near-real-time trading data to QuickSight dashboards. ACID compliance via Hive Metastore.</p>
+        <div class="pills">
+          <span class="pill p-purple">PySpark</span>
+          <span class="pill p-amber">Apache Hudi</span>
+          <span class="pill p-gray">AWS S3</span>
+          <span class="pill p-teal">QuickSight</span>
+        </div>
+      </div>
+
+      <!-- Fraud Analytics -->
+      <div class="card">
+        <p class="proj-tag" style="color:#dc2626;">Fraud Detection · GCP</p>
+        <h2 class="proj-title" style="font-size:14px;">Credit Card Fraud Analytics</h2>
+        <p class="proj-desc" style="color:#555;margin-bottom:12px;">Batch pipeline on GCP Dataproc with configurable fraud scoring rules across large-scale JSON datasets. Event-driven Airflow DAGs triggered by GCS Sensors for automated ingestion and archival.</p>
+        <div class="pills">
+          <span class="pill p-blue">PySpark</span>
+          <span class="pill p-green">Airflow</span>
+          <span class="pill p-gray">GCP Dataproc</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience">
+    <p class="section-label">Experience</p>
+    <div class="bento g3">
+
+      <div class="card">
+        <p class="exp-co">Texas A&M — IDRT</p>
+        <p class="exp-role">Graduate Research Assistant</p>
+        <p class="exp-date">Mar 2025 – Oct 2025 · College Station, TX</p>
+        <ul class="bullets">
+          <li>Distributed object detection pipeline (Grounding DINO, SAM, Stable Diffusion) for First Floor Elevation extraction — 35% flood risk precision gain.</li>
+          <li>Building damage classification at 85% accuracy using CNN/ResNet; image geolocation using CLIP, DINO, ViT on large-scale post-disaster datasets.</li>
+          <li>RESTful APIs and automated deep learning pipelines reducing manual data entry by 60%.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <p class="exp-co">Salesforce</p>
+        <p class="exp-role">Software Engineer</p>
+        <p class="exp-date">Dec 2021 – Jul 2024 · Hyderabad, India</p>
+        <ul class="bullets">
+          <li>Full-stack internal apps in Java, Spring Boot, React serving 500+ engineers; 50% operational overhead reduction via CI/CD automation.</li>
+          <li>High-throughput Kafka + RabbitMQ pipeline processing 1M+ events/minute for real-time visibility across global distributed systems.</li>
+          <li>AWS (EC2, S3, Lambda) + Docker + Kubernetes — 99.9% uptime across containerized microservices.</li>
+          <li>Custom Splunk dashboards and Slack integrations helping 100+ teams cut system downtime by 40%.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <p class="exp-co">Rejolt EdTech</p>
+        <p class="exp-role">Software Developer Intern</p>
+        <p class="exp-date">Dec 2020 – Nov 2021 · Hyderabad, India</p>
+        <ul class="bullets">
+          <li>Modular Angular / TypeScript components improving front-end performance 20% for 5,000+ active students.</li>
+          <li>Automated unit test suites expanding code coverage to 85%.</li>
+        </ul>
+        <div class="edu-divider"></div>
+        <p style="font-size:10px;color:#aaa;letter-spacing:1.5px;margin-bottom:12px;">EDUCATION</p>
+        <div style="margin-bottom:12px;">
+          <p style="font-size:13px;font-weight:500;color:#111;">MS Data Science <span style="font-weight:400;color:#bbb;">· GPA 3.6 / 4.0</span></p>
+          <p style="font-size:12px;color:var(--c-indigo);">Texas A&M University</p>
+          <p style="font-size:11px;color:#bbb;">Aug 2024 – Apr 2026</p>
+        </div>
+        <div>
+          <p style="font-size:13px;font-weight:500;color:#111;">B.Tech Computer Science <span style="font-weight:400;color:#bbb;">· GPA 9.0 / 10.0</span></p>
+          <p style="font-size:12px;color:var(--c-indigo);">Vardhaman College of Engineering</p>
+          <p style="font-size:11px;color:#bbb;">Aug 2017 – May 2021</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="bento g2">
+
+      <div class="card card-contact" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <p style="font-size:11px;color:#5a5a80;letter-spacing:1px;margin-bottom:10px;">GET IN TOUCH</p>
+          <p style="font-size:20px;font-weight:500;color:#fff;line-height:1.28;letter-spacing:-0.4px;">Open to SWE & MLE roles<br>for Summer 2026.</p>
+        </div>
+        <a href="mailto:harsharapuru2k@gmail.com" style="margin-top:18px;display:inline-block;font-size:12px;background:rgba(255,255,255,0.08);color:#b0b0d8;padding:8px 18px;border-radius:20px;border:0.5px solid rgba(255,255,255,0.12);text-decoration:none;">harsharapuru2k@gmail.com ↗</a>
+      </div>
+
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+        <p style="font-size:10px;color:#aaa;letter-spacing:1.5px;margin-bottom:8px;">LINKS</p>
+        <a class="link-row" href="https://github.com/harsharapuru2k" target="_blank" rel="noopener"><span>GitHub</span><span class="link-arr">↗</span></a>
+        <a class="link-row" href="https://linkedin.com/in/harsharapuru2k" target="_blank" rel="noopener"><span>LinkedIn</span><span class="link-arr">↗</span></a>
+        <a class="link-row" href="mailto:harsharapuru2k@gmail.com"><span>Email</span><span class="link-arr">↗</span></a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Built with HTML &amp; CSS ·
+  <a href="https://github.com/harsharapuru2k" target="_blank" rel="noopener">harsharapuru2k</a>
+</footer>
+
+</body>
+</html>
